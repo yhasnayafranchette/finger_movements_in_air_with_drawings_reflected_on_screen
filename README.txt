@@ -1,3 +1,10 @@
+Youtube Link:
+Computer Vision Project | Air Canvas | Project with code and best for resume | Python OpenCV Project
+https://youtu.be/eHgvMAwfODw?si=bPUW9INCQsJAn799
+
+
+
+
 Instructions: 
 Gawa kayo ng medyo exciting na python program. Hanap kayo ng any existing python project sa youtube na interesting para sa inyo. Gawin nyo yung project tapos pag gumagana na gawan nyo ng demo.
 
