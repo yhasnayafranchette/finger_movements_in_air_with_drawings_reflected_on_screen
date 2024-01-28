@@ -7,6 +7,9 @@ import cv2
 from collections import deque
 
 # Make function for trackbar 
+def setValues(x):
+   print("")
+
 # Create trackbars for marker color adjustments
 # Create arrays to handle color points of different colors
 # Indexes to mark the points in particular arrays of specific colour
