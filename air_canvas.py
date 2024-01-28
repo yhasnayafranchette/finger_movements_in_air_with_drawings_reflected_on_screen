@@ -2,6 +2,10 @@
 # https://youtu.be/eHgvMAwfODw?si=bPUW9INCQsJAn799
 
 # Import Libraries
+import numpy as np
+import cv2
+from collections import deque
+
 # Make function for trackbar 
 # Create trackbars for marker color adjustments
 # Create arrays to handle color points of different colors
