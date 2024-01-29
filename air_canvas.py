@@ -20,6 +20,11 @@ cv2.create_trackbar("Lower Saturation", "Color detectors", 72, 255,set_values)
 cv2.create_trackbar("Lower Value", "Color detectors", 49, 255,set_values)
 
 # Create arrays to handle color points of different colors
+blue_points = [deque(maximum_length=1024)]
+green_points = [deque(maximum_length=1024)]
+red_points = [deque(maximum_length=1024)]
+yellow_points = [deque(maximum_length=1024)]
+
 # Indexes to mark the points in particular arrays of specific colour
 # Kernel to be used for dilation purpose 
 # Create the Canvas setup
