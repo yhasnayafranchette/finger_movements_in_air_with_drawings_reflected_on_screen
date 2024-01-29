@@ -26,6 +26,11 @@ red_points = [deque(maximum_length=1024)]
 yellow_points = [deque(maximum_length=1024)]
 
 # Indexes to mark the points in particular arrays of specific colour
+blue_index = 0
+green_index = 0
+red_index = 0
+yellow_index = 0
+
 # Kernel to be used for dilation purpose 
 # Create the Canvas setup
 # Load the default webcam of the laptop/PC
