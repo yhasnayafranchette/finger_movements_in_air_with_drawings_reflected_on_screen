@@ -41,6 +41,13 @@ colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (0, 255, 255)]
 color_index = 0
 
 # Create the Canvas setup
+paint_window = np.zeros((471,636,3)) + 255
+paint_window = cv2.rectangle(paint_window, (40,1), (140,65), (0,0,0), 2)
+paint_window = cv2.rectangle(paint_window, (160,1), (255,65), colors[0], -1)
+paint_window = cv2.rectangle(paint_window, (275,1), (370,65), colors[1], -1)
+paint_window = cv2.rectangle(paint_window, (390,1), (485,65), colors[2], -1)
+paint_window = cv2.rectangle(paint_window, (505,1), (600,65), colors[3], -1)
+
 # Load the default webcam of the laptop/PC
 # Add the color buttons to the live frame for color access
 # Identify the pointer by making its mask
