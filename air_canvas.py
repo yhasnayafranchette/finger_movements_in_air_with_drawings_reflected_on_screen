@@ -32,6 +32,11 @@ red_index = 0
 yellow_index = 0
 
 # Kernel to be used for dilation purpose 
+kernel = np.ones((5,5),np.uint8)
+
+colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (0, 255, 255)]
+color_index = 0
+
 # Create the Canvas setup
 # Load the default webcam of the laptop/PC
 # Add the color buttons to the live frame for color access
