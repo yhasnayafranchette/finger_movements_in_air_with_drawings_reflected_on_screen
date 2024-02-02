@@ -56,6 +56,8 @@ cv2.put_text(paint_window, "YELLOW", (520, 33), cv2.font_hershey_simplexX, 0.5, 
 cv2.named_window('Paint', cv2.window_autosize)
 
 # Load the default webcam of the laptop/PC
+cap = cv2.VideoCapture(0)
+
 # Add the color buttons to the live frame for color access
 # Identify the pointer by making its mask
 # Find contours for the pointer 
