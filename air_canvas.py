@@ -85,6 +85,10 @@ while True:
    cv2.putText(frame, "YELLOW", (520, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150,150,150), 2, cv2.LINE_AA)
 
 # Identify the pointer by making its mask
+   Mask = cv2.inRange(hsv, lower_hsv, upper_hsv)
+   Mask = cv2.erode(Mask, kernel, iterations=1)
+   Mask = cv2.morphologyEx(Mask, cv2.MORPH_OPEN, kernel)
+   Mask = cv2.dilate(Mask, kernel, iterations=1)
 # Find contours for the pointer 
 # Draw lines of all the colors on the canvas and frame 
 # Display the windows
