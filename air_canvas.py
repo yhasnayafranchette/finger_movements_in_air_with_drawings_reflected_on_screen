@@ -89,7 +89,12 @@ while True:
    Mask = cv2.erode(Mask, kernel, iterations=1)
    Mask = cv2.morphologyEx(Mask, cv2.MORPH_OPEN, kernel)
    Mask = cv2.dilate(Mask, kernel, iterations=1)
+   
 # Find contours for the pointer 
+   cnts,_ = cv2.findContours(Mask.copy(), cv2.RETR_EXTERNAL,
+    	cv2.CHAIN_APPROX_SIMPLE)
+   center = None
+
 # Draw lines of all the colors on the canvas and frame 
 # Display the windows
 # Display the camera and all resources
