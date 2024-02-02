@@ -64,6 +64,15 @@ while True:
    frame = cv2.flip(frame, 1)
    hsv = cv2.cvt_color(frame, cv2.color_BGR2HSV)
 
+   u_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
+   u_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
+   u_value = cv2.getTrackbarPos("Upper Value", "Color detectors")
+   l_hue = cv2.getTrackbarPos("Lower Hue", "Color detectors")
+   l_saturation = cv2.getTrackbarPos("Lower Saturation", "Color detectors")
+   l_value = cv2.getTrackbarPos("Lower Value", "Color detectors")
+   upper_hsv = np.array([u_hue,u_saturation,u_value])
+   lower_hsv = np.array([l_hue,l_saturation,l_value])
+
 # Identify the pointer by making its mask
 # Find contours for the pointer 
 # Draw lines of all the colors on the canvas and frame 
