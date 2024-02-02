@@ -48,12 +48,12 @@ paint_window = cv2.rectangle(paint_window, (275,1), (370,65), colors[1], -1)
 paint_window = cv2.rectangle(paint_window, (390,1), (485,65), colors[2], -1)
 paint_window = cv2.rectangle(paint_window, (505,1), (600,65), colors[3], -1)
 
-cv2.put_text(paint_window, "CLEAR", (49, 33), cv2.font_hershey_simplex, 0.5, (0, 0, 0), 2, cv2.line_aa)
-cv2.put_text(paint_window, "BLUE", (185, 33), cv2.font_hershey_simplex, 0.5, (255, 255, 255), 2, cv2.line_aa)
-cv2.put_text(paint_window, "GREEN", (298, 33), cv2.font_hershey_simplex, 0.5, (255, 255, 255), 2, cv2.line_aa)
-cv2.put_text(paint_window, "RED", (420, 33), cv2.font_hershey_simplex, 0.5, (255, 255, 255), 2, cv2.line_aa)
-cv2.put_text(paint_window, "YELLOW", (520, 33), cv2.font_hershey_simplexX, 0.5, (150,150,150), 2, cv2.line_aa)
-cv2.named_window('Paint', cv2.window_autosize)
+cv2.putText(paint_window, "CLEAR", (49, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2, cv2.LINE_AA)
+cv2.putText(paint_window, "BLUE", (185, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+cv2.putText(paint_window, "GREEN", (298, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+cv2.putText(paint_window, "RED", (420, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+cv2.putText(paint_window, "YELLOW", (520, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150,150,150), 2, cv2.LINE_AA)
+cv2.namedWindow('Paint', cv2.WINDOW_AUTOSIZE)
 
 # Load the default webcam of the laptop/PC
 cap = cv2.VideoCapture(0)
@@ -62,7 +62,7 @@ cap = cv2.VideoCapture(0)
 while True:
    ret, frame = cap.read()
    frame = cv2.flip(frame, 1)
-   hsv = cv2.cvt_color(frame, cv2.color_BGR2HSV)
+   hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
    u_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
    u_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
