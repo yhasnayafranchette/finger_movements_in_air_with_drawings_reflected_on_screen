@@ -73,6 +73,12 @@ while True:
    upper_hsv = np.array([u_hue,u_saturation,u_value])
    lower_hsv = np.array([l_hue,l_saturation,l_value])
 
+   frame = cv2.rectangle(frame, (40,1), (140,65), (122,122,122), -1)
+   frame = cv2.rectangle(frame, (160,1), (255,65), colors[0], -1)
+   frame = cv2.rectangle(frame, (275,1), (370,65), colors[1], -1)
+   frame = cv2.rectangle(frame, (390,1), (485,65), colors[2], -1)
+   frame = cv2.rectangle(frame, (505,1), (600,65), colors[3], -1)
+
 # Identify the pointer by making its mask
 # Find contours for the pointer 
 # Draw lines of all the colors on the canvas and frame 
