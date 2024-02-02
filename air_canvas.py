@@ -59,6 +59,11 @@ cv2.named_window('Paint', cv2.window_autosize)
 cap = cv2.VideoCapture(0)
 
 # Add the color buttons to the live frame for color access
+while True:
+   ret, frame = cap.read()
+   frame = cv2.flip(frame, 1)
+   hsv = cv2.cvt_color(frame, cv2.color_BGR2HSV)
+
 # Identify the pointer by making its mask
 # Find contours for the pointer 
 # Draw lines of all the colors on the canvas and frame 
