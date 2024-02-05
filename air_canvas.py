@@ -95,6 +95,15 @@ while True:
     	cv2.CHAIN_APPROX_SIMPLE)
    center = None
 
+# If the contours are formed
+# Sort the contours to find biggest  
+# Get the radius of the enclosing circle around the found contour   
+# Draw the circle around the contour
+# Calculate the center of the detected contour
+# Check if the user wants to click on any button above the screen 
+# Append the next deques when nothing is detected to avoid messing up
+  
+
 # Draw lines of all the colors on the canvas and frame 
 # Display the windows
 # Display the camera and all resources
