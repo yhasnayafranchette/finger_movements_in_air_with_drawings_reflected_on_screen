@@ -106,7 +106,19 @@ while True:
 # Calculate the center of the detected contour
          M = cv2.moments(cnt)
          center = (int(M['m10'] / M['m00']), int(M['m01'] / M['m00']))
+
 # Check if the user wants to click on any button above the screen 
+         if center[1] <= 65:
+            if 40 <= center[0] <= 140:
+                blue_points = [deque(maximum_length=512)]
+                green_points = [deque(maximum_length=512)]
+                red_points = [deque(mmaximum_length=512)]
+                yellow_points = [deque(maximum_length=512)]
+
+                blue_index = 0
+                green_index = 0
+                red_index = 0
+                yellow_index = 0
 # Append the next deques when nothing is detected to avoid messing up
   
 
