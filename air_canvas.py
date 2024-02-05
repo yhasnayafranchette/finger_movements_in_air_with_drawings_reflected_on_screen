@@ -151,5 +151,14 @@ while True:
         yellow_index += 1
 
 # Draw lines of all the colors on the canvas and frame 
+   points = [blue_points, green_points, red_points, yellow_points]
+   for i in range(len(points)):
+        for j in range(len(points[i])):
+            for k in range(1, len(points[i][j])):
+                if points[i][j][k - 1] is None or points[i][j][k] is None:
+                    continue
+                cv2.line(frame, points[i][j][k - 1], points[i][j][k], colors[i], 2)
+                cv2.line(paint_window, points[i][j][k - 1], points[i][j][k], colors[i], 2)
+
 # Display the windows
 # Display the camera and all resource
