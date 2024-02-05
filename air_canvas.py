@@ -119,9 +119,20 @@ while True:
                 green_index = 0
                 red_index = 0
                 yellow_index = 0
+
+                paint_window[67:,:,:] = 255
+            elif 160 <= center[0] <= 255:
+                    colorIndex = 0 # Blue
+            elif 275 <= center[0] <= 370:
+                    colorIndex = 1 # Green
+            elif 390 <= center[0] <= 485:
+                    colorIndex = 2 # Red
+            elif 505 <= center[0] <= 600:
+                    colorIndex = 3 # Yellow
+                    
 # Append the next deques when nothing is detected to avoid messing up
   
 
 # Draw lines of all the colors on the canvas and frame 
 # Display the windows
-# Display the camera and all resources
+# Display the camera and all resource
