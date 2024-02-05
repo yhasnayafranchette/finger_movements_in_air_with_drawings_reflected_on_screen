@@ -130,16 +130,25 @@ while True:
             elif 505 <= center[0] <= 600:
                     colorIndex = 3 # Yellow
          else :
-              if colorIndex == 0:
-                    blue_points[blue_index].appendleft(center)
+            if colorIndex == 0:
+                blue_points[blue_index].appendleft(center)
             elif colorIndex == 1:
-                gpoints[green_index].appendleft(center)
+                green_points[green_index].appendleft(center)
             elif colorIndex == 2:
-                rpoints[red_index].appendleft(center)
+                red_points[red_index].appendleft(center)
             elif colorIndex == 3:
-                ypoints[yellow_index].appendleft(center)
+                yellow_points[yellow_index].appendleft(center)
+         
 # Append the next deques when nothing is detected to avoid messing up
-  
+   else:
+        blue_points.append(deque(maximum_length=512))
+        blue_index += 1
+        green_points.append(deque(maximum_length=512))
+        green_index += 1
+        red_points.append(deque(maximum_length=512))
+        red_index += 1
+        yellow_points.append(deque(maximum_length=512))
+        yellow_index += 1
 
 # Draw lines of all the colors on the canvas and frame 
 # Display the windows
