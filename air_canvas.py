@@ -129,7 +129,15 @@ while True:
                     colorIndex = 2 # Red
             elif 505 <= center[0] <= 600:
                     colorIndex = 3 # Yellow
-                    
+         else :
+              if colorIndex == 0:
+                    blue_points[blue_index].appendleft(center)
+            elif colorIndex == 1:
+                gpoints[green_index].appendleft(center)
+            elif colorIndex == 2:
+                rpoints[red_index].appendleft(center)
+            elif colorIndex == 3:
+                ypoints[yellow_index].appendleft(center)
 # Append the next deques when nothing is detected to avoid messing up
   
 
