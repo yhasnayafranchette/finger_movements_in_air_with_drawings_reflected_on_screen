@@ -96,10 +96,16 @@ while True:
    center = None
 
 # If the contours are formed
+   if len(cnts) > 0:
 # Sort the contours to find biggest  
+         cnt = sorted(cnts, key = cv2.contourArea, reverse = True)[0]
 # Get the radius of the enclosing circle around the found contour   
+         ((x, y), radius) = cv2.minEnclosingCircle(cnt)
 # Draw the circle around the contour
+         cv2.circle(frame, (int(x), int(y)), int(radius), (0, 255, 255), 2)
 # Calculate the center of the detected contour
+         M = cv2.moments(cnt)
+         center = (int(M['m10'] / M['m00']), int(M['m01'] / M['m00']))
 # Check if the user wants to click on any button above the screen 
 # Append the next deques when nothing is detected to avoid messing up
   
