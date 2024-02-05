@@ -122,21 +122,21 @@ while True:
 
                 paint_window[67:,:,:] = 255
             elif 160 <= center[0] <= 255:
-                    colorIndex = 0 # Blue
+                    color_index = 0 # Blue
             elif 275 <= center[0] <= 370:
-                    colorIndex = 1 # Green
+                    color_index = 1 # Green
             elif 390 <= center[0] <= 485:
-                    colorIndex = 2 # Red
+                    color_index = 2 # Red
             elif 505 <= center[0] <= 600:
-                    colorIndex = 3 # Yellow
+                    color_index = 3 # Yellow
          else :
-            if colorIndex == 0:
+            if color_index == 0:
                 blue_points[blue_index].appendleft(center)
-            elif colorIndex == 1:
+            elif color_index == 1:
                 green_points[green_index].appendleft(center)
-            elif colorIndex == 2:
+            elif color_index == 2:
                 red_points[red_index].appendleft(center)
-            elif colorIndex == 3:
+            elif color_index == 3:
                 yellow_points[yellow_index].appendleft(center)
          
 # Append the next deques when nothing is detected to avoid messing up
