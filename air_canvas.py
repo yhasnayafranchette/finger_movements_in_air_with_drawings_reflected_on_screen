@@ -12,9 +12,11 @@ from collections import deque
 # Make function for trackbar 
 def set_values(x):
    print("")
+   pass
 
 # Create trackbars for marker color adjustments
-cv2.namedWindow("Color detectors")
+cv2.namedWindow("Color detectors", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL)
+cv2.resizeWindow("Color detectors", 500, 300)
 cv2.createTrackbar("Upper Hue", "Color detectors", 153, 180,set_values)
 cv2.createTrackbar("Upper Saturation", "Color detectors", 255, 255,set_values)
 cv2.createTrackbar("Upper Value", "Color detectors", 255, 255,set_values)
@@ -48,12 +50,12 @@ paint_window = cv2.rectangle(paint_window, (275,1), (370,65), colors[1], -1)
 paint_window = cv2.rectangle(paint_window, (390,1), (485,65), colors[2], -1)
 paint_window = cv2.rectangle(paint_window, (505,1), (600,65), colors[3], -1)
 
-cv2.putText(paint_window, "CLEAR", (49, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2, cv2.LINE_AA)
+cv2.putText(paint_window, "CLEAR ALL", (49, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2, cv2.LINE_AA)
 cv2.putText(paint_window, "BLUE", (185, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 cv2.putText(paint_window, "GREEN", (298, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 cv2.putText(paint_window, "RED", (420, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
 cv2.putText(paint_window, "YELLOW", (520, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150,150,150), 2, cv2.LINE_AA)
-cv2.namedWindow('Paint', cv2.WINDOW_AUTOSIZE)
+cv2.namedWindow('Paint', cv2.WINDOW_NORMAL)
 
 # Load the default webcam of the laptop/PC
 cap = cv2.VideoCapture(0)
@@ -162,9 +164,9 @@ while True:
                 cv2.line(paint_window, points[i][j][k - 1], points[i][j][k], colors[i], 2)
 
 # Display the windows
-   cv2.imshow("Tracking", frame)
+   cv2.imshow("Canvas", frame)
    cv2.imshow("Paint", paint_window)
-   cv2.imshow("mask",Mask)
+   cv2.imshow("Mask", Mask)
 
    if cv2.waitKey(1) & 0xFF == ord("q"):
       break
