@@ -161,4 +161,8 @@ while True:
                 cv2.line(paint_window, points[i][j][k - 1], points[i][j][k], colors[i], 2)
 
 # Display the windows
+   cv2.imshow("Tracking", frame)
+   cv2.imshow("Paint", paint_window)
+   cv2.imshow("mask",Mask)
+
 # Display the camera and all resource
