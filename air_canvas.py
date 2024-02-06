@@ -17,6 +17,11 @@ def set_values(x):
     l_hue = cv2.getTrackbarPos("Lower Hue", "Color detectors")
     l_saturation = cv2.getTrackbarPos("Lower Saturation", "Color detectors")
     l_value = cv2.getTrackbarPos("Lower Value", "Color detectors")
+    
+    color_box_size = 50
+    color_box = np.zeros((color_box_size, color_box_size, 3), dtype=np.uint8)
+    color_box[:] = [u_hue, u_saturation, u_value]
+    cv2.imshow("Color detectors", color_box)
 
 # Create trackbars for marker color adjustments
 cv2.namedWindow("Color detectors", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL)
