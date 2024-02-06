@@ -14,19 +14,19 @@ def set_values(x):
    print("")
 
 # Create trackbars for marker color adjustments
-cv2.named_window("Color detectors")
-cv2.create_trackbar("Upper Hue", "Color detectors", 153, 180,set_values)
-cv2.create_trackbar("Upper Saturation", "Color detectors", 255, 255,set_values)
-cv2.create_trackbar("Upper Value", "Color detectors", 255, 255,set_values)
-cv2.create_trackbar("Lower Hue", "Color detectors", 64, 180,set_values)
-cv2.create_trackbar("Lower Saturation", "Color detectors", 72, 255,set_values)
-cv2.create_trackbar("Lower Value", "Color detectors", 49, 255,set_values)
+cv2.namedWindow("Color detectors")
+cv2.createTrackbar("Upper Hue", "Color detectors", 153, 180,set_values)
+cv2.createTrackbar("Upper Saturation", "Color detectors", 255, 255,set_values)
+cv2.createTrackbar("Upper Value", "Color detectors", 255, 255,set_values)
+cv2.createTrackbar("Lower Hue", "Color detectors", 64, 180,set_values)
+cv2.createTrackbar("Lower Saturation", "Color detectors", 72, 255,set_values)
+cv2.createTrackbar("Lower Value", "Color detectors", 49, 255,set_values)
 
 # Create arrays to handle color points of different colors
-blue_points = [deque(maximum_length=1024)]
-green_points = [deque(maximum_length=1024)]
-red_points = [deque(maximum_length=1024)]
-yellow_points = [deque(maximum_length=1024)]
+blue_points = [deque(maxlen=1024)]
+green_points = [deque(maxlen=1024)]
+red_points = [deque(maxlen=1024)]
+yellow_points = [deque(maxlen=1024)]
 
 # Indexes to mark the points in particular arrays of specific colour
 blue_index = 0
@@ -63,6 +63,7 @@ while True:
    ret, frame = cap.read()
    frame = cv2.flip(frame, 1)
    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
 
    u_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
    u_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
@@ -110,10 +111,10 @@ while True:
 # Check if the user wants to click on any button above the screen 
          if center[1] <= 65:
             if 40 <= center[0] <= 140:
-                blue_points = [deque(maximum_length=512)]
-                green_points = [deque(maximum_length=512)]
-                red_points = [deque(mmaximum_length=512)]
-                yellow_points = [deque(maximum_length=512)]
+                blue_points = [deque(maxlen=512)]
+                green_points = [deque(maxlen=512)]
+                red_points = [deque(maxlen=512)]
+                yellow_points = [deque(maxlen=512)]
 
                 blue_index = 0
                 green_index = 0
@@ -141,13 +142,13 @@ while True:
          
 # Append the next deques when nothing is detected to avoid messing up
    else:
-        blue_points.append(deque(maximum_length=512))
+        blue_points.append(deque(maxlen=512))
         blue_index += 1
-        green_points.append(deque(maximum_length=512))
+        green_points.append(deque(maxlen=512))
         green_index += 1
-        red_points.append(deque(maximum_length=512))
+        red_points.append(deque(maxlen=512))
         red_index += 1
-        yellow_points.append(deque(maximum_length=512))
+        yellow_points.append(deque(maxlen=512))
         yellow_index += 1
 
 # Draw lines of all the colors on the canvas and frame 
