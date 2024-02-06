@@ -165,4 +165,9 @@ while True:
    cv2.imshow("Paint", paint_window)
    cv2.imshow("mask",Mask)
 
+   if cv2.waitKey(1) & 0xFF == ord("q"):
+      break
+
 # Display the camera and all resource
+cap.release()
+cv2.destroyAllWindows()
