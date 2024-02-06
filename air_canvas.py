@@ -11,8 +11,12 @@ from collections import deque
 
 # Make function for trackbar 
 def set_values(x):
-   print("")
-   pass
+    u_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
+    u_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
+    u_value = cv2.getTrackbarPos("Upper Value", "Color detectors")
+    l_hue = cv2.getTrackbarPos("Lower Hue", "Color detectors")
+    l_saturation = cv2.getTrackbarPos("Lower Saturation", "Color detectors")
+    l_value = cv2.getTrackbarPos("Lower Value", "Color detectors")
 
 # Create trackbars for marker color adjustments
 cv2.namedWindow("Color detectors", cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_NORMAL)
