@@ -75,15 +75,14 @@ while True:
    frame = cv2.flip(frame, 1)
    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-
-   u_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
-   u_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
-   u_value = cv2.getTrackbarPos("Upper Value", "Color detectors")
-   l_hue = cv2.getTrackbarPos("Lower Hue", "Color detectors")
-   l_saturation = cv2.getTrackbarPos("Lower Saturation", "Color detectors")
-   l_value = cv2.getTrackbarPos("Lower Value", "Color detectors")
-   upper_hsv = np.array([u_hue,u_saturation,u_value])
-   lower_hsv = np.array([l_hue,l_saturation,l_value])
+   upper_hue = cv2.getTrackbarPos("Upper Hue", "Color detectors")
+   upper_saturation = cv2.getTrackbarPos("Upper Saturation", "Color detectors")
+   upper_value = cv2.getTrackbarPos("Upper Value", "Color detectors")
+   lower_hue = cv2.getTrackbarPos("Lower Hue", "Color detectors")
+   lower_saturation = cv2.getTrackbarPos("Lower Saturation", "Color detectors")
+   lower_value = cv2.getTrackbarPos("Lower Value", "Color detectors")
+   upper_hsv = np.array([upper_hue,upper_saturation,upper_value])
+   lower_hsv = np.array([lower_hue,lower_saturation,lower_value])
 
    frame = cv2.rectangle(frame, (40,1), (140,65), (122,122,122), -1)
    frame = cv2.rectangle(frame, (160,1), (255,65), colors[0], -1)
@@ -97,13 +96,13 @@ while True:
    cv2.putText(frame, "YELLOW", (520, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150,150,150), 2, cv2.LINE_AA)
 
 # Identify the pointer by making its mask
-   Mask = cv2.inRange(hsv, lower_hsv, upper_hsv)
-   Mask = cv2.erode(Mask, kernel, iterations=1)
-   Mask = cv2.morphologyEx(Mask, cv2.MORPH_OPEN, kernel)
-   Mask = cv2.dilate(Mask, kernel, iterations=1)
+   mask = cv2.inRange(hsv, lower_hsv, upper_hsv)
+   mask = cv2.erode(mask, kernel, iterations=1)
+   mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
+   mask = cv2.dilate(mask, kernel, iterations=1)
    
 # Find contours for the pointer 
-   cnts,_ = cv2.findContours(Mask.copy(), cv2.RETR_EXTERNAL,
+   cnts,_ = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
     	cv2.CHAIN_APPROX_SIMPLE)
    center = None
 
@@ -175,7 +174,7 @@ while True:
 # Display the windows
    cv2.imshow("Canvas", frame)
    cv2.imshow("Paint", paint_window)
-   cv2.imshow("Mask", Mask)
+   cv2.imshow("Mask", mask)
 
    if cv2.waitKey(1) & 0xFF == ord("q"):
       break
