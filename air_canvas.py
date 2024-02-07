@@ -29,9 +29,9 @@ cv2.resizeWindow("Color detectors", 500, 300)
 cv2.createTrackbar("Upper Hue", "Color detectors", 153, 180,set_values)
 cv2.createTrackbar("Upper Saturation", "Color detectors", 255, 255,set_values)
 cv2.createTrackbar("Upper Value", "Color detectors", 255, 255,set_values)
-cv2.createTrackbar("Lower Hue", "Color detectors", 64, 180,set_values)
-cv2.createTrackbar("Lower Saturation", "Color detectors", 72, 255,set_values)
-cv2.createTrackbar("Lower Value", "Color detectors", 49, 255,set_values)
+cv2.createTrackbar("Lower Hue", "Color detectors", 20, 180,set_values)
+cv2.createTrackbar("Lower Saturation", "Color detectors", 255, 255,set_values)
+cv2.createTrackbar("Lower Value", "Color detectors", 45, 255,set_values)
 
 # Create arrays to handle color points of different colors
 blue_points = [deque(maxlen=1024)]
